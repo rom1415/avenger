@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 
-
 const mongoose = require('mongoose');
 
 var heroesRouter = require('./routes/heroes');
@@ -22,13 +21,17 @@ var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.use(cors());
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 app.use('/', heroesRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

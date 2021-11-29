@@ -7,10 +7,18 @@ class HeroList extends React.Component {
     constructor(props){
         super(props)
 
+        this.state = {
+            heroes: []
+        }
+
+        let self = this;
+
         axios
-            .get('localhost:3001/heroes')
+            .get('http://localhost:3001/heroes')
             .then(function(res){
-                console.log(res.data);
+                self.setState({
+                    heroes: res.data
+                })
             })
     }
 
@@ -18,9 +26,18 @@ class HeroList extends React.Component {
         return(
             <div>
                 <h1>HeroList</h1>
-                <Hero name="Hero name"></Hero>
-                <Hero name="Hero name 2"></Hero>
-                <Hero name="Hero name 3"></Hero>
+                {
+                    this.state.heroes.map((hero, index) => {
+                        return (
+                            <Hero 
+                                key={index} 
+                                name={hero.name}
+                                age={hero.age}
+                                status={hero.status}
+                            ></Hero>
+                        )
+                    })
+                }
             </div>
         )
     }
