@@ -4,11 +4,20 @@ var heroesModel = require('../models/heroes.js');
 
 /* GET home page. */
 router.get('/heroes', function(req, res, next) {
-  res.send('GET /heroes');
+  heroesModel.find({}, function(err, heroes){
+    res.send(heroes);
+  });
 });
 
 router.post('/heroes', function(req, res, next){
-  res.send('POST /hero')
+
+  heroesModel.create({
+    name: 'new hero',
+    age: 30,
+    status: 'actif'
+  });
+
+  res.send('POST /hero');
 })
 
 
