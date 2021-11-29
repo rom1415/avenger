@@ -1,5 +1,28 @@
+@font-face {
+  font-family: 'Outfit';
+  src: url('fonts/static/Outfit-Thin.ttf');
+}
+
+*, body {
+  margin:0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit';
+}
+
+.splashscreen {
+  fill: white;
+  height: 150px;
+}
+
 .App {
   text-align: center;
+}
+
+.App-header__nav img {
+  fill: white;
 }
 
 .App-logo {
