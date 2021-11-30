@@ -9,9 +9,7 @@ class HeroList extends React.Component {
         super(props)
 
         this.state = {
-            heroes: [
-
-            ]
+            heroes: []
         }
 
         let self = this;

@@ -1,3 +1,41 @@
 .Hero__item {
     color: #000;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        'header'
+        'content'
+        'footer'
+    ;
+    height: 100%;
+}
+
+.Hero__item__header {
+    grid-area: header;
+    font-size: 16px;
+    margin-top:35px;
+}
+
+.Hero__item__header a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Hero__item__content {
+    grid-area: content;
+}
+
+.Hero__item__footer {
+    background-color: rgb(229 162 79 / 94);
+    grid-area: footer;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left:10px;
+    padding-right:10px;
 }
