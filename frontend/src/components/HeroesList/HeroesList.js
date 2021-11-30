@@ -1,6 +1,8 @@
 import React from 'react'
 import Hero from '../Hero/Hero.js'
 import axios from 'axios'
+import Switch from "react-switch";
+import { SetState } from 'react';
 import './style.css'
 
 class HeroList extends React.Component {
@@ -11,7 +13,9 @@ class HeroList extends React.Component {
         this.state = {
             heroes: [],
             filtered: [],
-            searchTerm: ''
+            searchTerm: '',
+            checked: false,
+            statusFilter:''
         }
 
         let self = this;
@@ -43,21 +47,34 @@ class HeroList extends React.Component {
             });
         }
     };
- 
-    render() {
 
-        if ( this.state.filtered.length === 0 ) {
-            return (
-                <div>
-                    <input type="text" className="HeroList__search" onChange={this.handleChange}></input>
-                    <h1>No result(s)</h1>
-                </div>
-            )
+    handleStatus = (e) => {
+        this.setState({checked: e})
+
+        let filtered = this.state.heroes.filter(hero => hero.status.includes('inactif'))
+
+        if ( !e ) {
+            filtered = this.state.heroes.filter(hero => hero.status.includes('actif'))
         }
 
+        this.setState({
+            filtered: filtered
+        })
+    }
+    
+    render() {
         return(
             <div>
-                <input type="text" className="HeroList__search" onChange={this.handleChange}></input>
+                <div className="HeroList__search__container">
+                    <div className="HeroList__search__container__input">
+                        <input type="text" className="HeroList__search" onChange={this.handleChange}></input>
+                    </div>
+                    <div className="HeroList__search__container__switch">
+                        <span>Actif</span>
+                        <Switch onChange={this.handleStatus} checked={this.state.checked} />
+                        <span>Inactif</span>
+                    </div>
+                </div>
                 <div className="HeroList__container">
                 {
                     this.state.filtered.map((hero, index) => {
