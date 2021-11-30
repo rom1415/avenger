@@ -8,7 +8,7 @@ Description of the stack used for this Avenger's app
 - NodeJS with ExpressJS framework
 - Use routes to define API endpoints
 
-__Specifications de l'API__
+__API Specs__
 
 GET /heroes
 
@@ -18,13 +18,6 @@ POST /heroes
 
 - Create a new heroes into the MongoDB database
 
-UPDATE /heroes/:id
-
-- Update a specific heroes from hero ID
-
-DELETE /heroes/:id
-
-- Delete a specific heroes from hero ID
 
 **Frontend**
 
@@ -37,6 +30,9 @@ Heroes can be also be searched with the input search bar and filtered by statuse
 
 - Hero
     - Display a single Hero
+
+- HeroDetail
+    - Display a single hero detail
 
 - Splashscreen
     - Application start
