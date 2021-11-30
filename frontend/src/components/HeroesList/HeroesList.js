@@ -2,7 +2,6 @@ import React from 'react'
 import Hero from '../Hero/Hero.js'
 import axios from 'axios'
 import Switch from "react-switch";
-import { SetState } from 'react';
 import './style.css'
 
 class HeroList extends React.Component {
@@ -61,7 +60,7 @@ class HeroList extends React.Component {
             filtered: filtered
         })
     }
-    
+
     render() {
         return(
             <div>
@@ -75,7 +74,7 @@ class HeroList extends React.Component {
                         <span>Inactif</span>
                     </div>
                 </div>
-                <div className="HeroList__container">
+                <div className={this.props.show ? 'HeroList__container' : 'HeroList__container HeroList__container__hidden'}>
                 {
                     this.state.filtered.map((hero, index) => {
                         return (
@@ -86,6 +85,7 @@ class HeroList extends React.Component {
                                     name={hero.name}
                                     age={hero.age}
                                     status={hero.status}
+                                    onclick={this.props.onclick}
                                 ></Hero>
                             </a>
                         )

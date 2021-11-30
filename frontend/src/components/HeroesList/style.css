@@ -4,6 +4,10 @@
     grid-template-rows: auto auto auto;
 }
 
+.HeroList__container__hidden {
+    display: none;
+}
+
 .HeroList__hero__item a {
     color: #fff;
     text-transform: uppercase;

@@ -1,0 +1,81 @@
+.HeroDetail__item {
+    height: 350px;
+    width: 650px;
+    background-color: #fff;
+    border-radius: 10px 10px 10px 10px;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.HeroDetail__item__header {
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    padding:30px;
+    justify-content: space-between;
+}
+
+.HeroDetail__item__description {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left:30px;
+    color: #000;
+    font-size: 24px;
+    font-family: 'Outfit';
+    margin-top:15px;
+    margin-bottom:30px;
+}
+
+.HeroDetail__item__infos {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left:30px;
+}
+
+.HeroDetail__item__infos div {
+    color: #000;
+    font-size: 24px;
+    font-family: 'Outfit';
+}
+
+.HeroDetail__item__infos > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.HeroDetail__item__meta {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.HeroDetail__item__infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.HeroDetails__close {
+    text-decoration: none;
+    color: #000;
+    margin-top:10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.HeroDetail__item p
+.HeroDetail__item a
+{
+    color: #000;
+    font-size: 24px;
+    font-family: 'Outfit';
+}
+
+.HeroDetail__item h1 {
+    color: #000;
+    font-size: 48px;
+    font-family: 'Outfit';
+}
