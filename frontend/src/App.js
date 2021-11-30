@@ -11,8 +11,9 @@ function App() {
       <header className="App-header">
         <div className="App-container">
           <Splashscreen display={true}></Splashscreen>
-          <Hero></Hero>
-          <HeroesList></HeroesList>
+          <div data-aos="fade-up" data-aos-delay="1200">
+            <HeroesList></HeroesList>
+          </div>
         </div>
       </header>
     </div>

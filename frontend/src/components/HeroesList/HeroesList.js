@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '../Hero/Hero.js'
 import axios from 'axios'
+import './style.css'
 
 class HeroList extends React.Component {
 
@@ -8,7 +9,9 @@ class HeroList extends React.Component {
         super(props)
 
         this.state = {
-            heroes: []
+            heroes: [
+
+            ]
         }
 
         let self = this;
@@ -25,19 +28,22 @@ class HeroList extends React.Component {
     render() {
         return(
             <div>
-                <h1>HeroList</h1>
+                <div className="HeroList__container">
                 {
                     this.state.heroes.map((hero, index) => {
                         return (
-                            <Hero 
-                                key={index} 
-                                name={hero.name}
-                                age={hero.age}
-                                status={hero.status}
-                            ></Hero>
+                            <div className="HeroList__hero__item">
+                                <Hero 
+                                    key={index} 
+                                    name={hero.name}
+                                    age={hero.age}
+                                    status={hero.status}
+                                ></Hero>
+                            </div>
                         )
                     })
                 }
+                </div>
             </div>
         )
     }

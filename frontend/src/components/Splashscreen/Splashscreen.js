@@ -2,8 +2,6 @@ import React from 'react'
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import AOS from 'aos';
 
-
-
 class Splashscreen extends React.Component {
 
     constructor(props){
