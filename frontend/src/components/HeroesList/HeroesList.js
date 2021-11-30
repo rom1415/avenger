@@ -2,7 +2,6 @@ import React from 'react'
 import Hero from '../Hero/Hero.js'
 import axios from 'axios'
 import Switch from "react-switch";
-import { SetState } from 'react';
 import './style.css'
 
 class HeroList extends React.Component {
