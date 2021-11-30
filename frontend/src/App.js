@@ -1,8 +1,7 @@
 import './App.css';
 
-import Splashscreen from './components/Splashscreen/Splashscreen';
-import Hero from './components/Hero/Hero';
-import HeroesList from './components/HeroesList/HeroesList';
+import Splashscreen from './components/Splashscreen/Splashscreen.js';
+import HeroesList from './components/HeroesList/HeroesList.js';
 
 function App() {
 

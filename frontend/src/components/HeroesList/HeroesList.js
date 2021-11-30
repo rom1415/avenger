@@ -9,7 +9,9 @@ class HeroList extends React.Component {
         super(props)
 
         this.state = {
-            heroes: []
+            heroes: [],
+            filtered: [],
+            searchTerm: ''
         }
 
         let self = this;
@@ -18,26 +20,57 @@ class HeroList extends React.Component {
             .get('http://localhost:3001/heroes')
             .then(function(res){
                 self.setState({
-                    heroes: res.data
+                    heroes: res.data,
+                    filtered: res.data,
                 })
             })
     }
 
+    handleChange = (e) => {
+        this.setState({
+            searchTerm: e.target.value
+        });
+
+        if ( e.target.value === '' ) {
+            this.setState({
+                filtered: this.state.heroes
+            });
+        } else {
+            let filtered = this.state.heroes.filter(hero => hero.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+                
+            this.setState({
+                filtered: filtered
+            });
+        }
+    };
+ 
     render() {
+
+        if ( this.state.filtered.length === 0 ) {
+            return (
+                <div>
+                    <input type="text" className="HeroList__search" onChange={this.handleChange}></input>
+                    <h1>No result(s)</h1>
+                </div>
+            )
+        }
+
         return(
             <div>
+                <input type="text" className="HeroList__search" onChange={this.handleChange}></input>
                 <div className="HeroList__container">
                 {
-                    this.state.heroes.map((hero, index) => {
+                    this.state.filtered.map((hero, index) => {
                         return (
-                            <div className="HeroList__hero__item">
+                            <a className="HeroList__hero__item">
                                 <Hero 
                                     key={index} 
+                                    id={hero._id}
                                     name={hero.name}
                                     age={hero.age}
                                     status={hero.status}
                                 ></Hero>
-                            </div>
+                            </a>
                         )
                     })
                 }
