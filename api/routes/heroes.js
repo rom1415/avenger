@@ -9,6 +9,12 @@ router.get('/heroes', function(req, res, next) {
   });
 });
 
+router.get('/hero/:id', function(req, res, next){
+  heroesModel.findById(req.params.id, function (err, item) {
+    res.json(item);
+  });
+});
+
 router.post('/heroes', function(req, res, next){
 
   heroesModel.create({
