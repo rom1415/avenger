@@ -14,7 +14,8 @@ class HeroList extends React.Component {
             filtered: [],
             searchTerm: '',
             checked: false,
-            statusFilter:''
+            statusFilter:'',
+            error: ''
         }
 
     }
@@ -29,6 +30,16 @@ class HeroList extends React.Component {
                 self.setState({
                     heroes: res.data,
                     filtered: res.data,
+                })
+
+                self.setState({
+                    error: ""
+                })
+            })
+            .catch(function(err)
+            {
+                self.setState({
+                    error: "Cannot connect to the API. Please retry."
                 })
             })
     }
@@ -78,6 +89,7 @@ class HeroList extends React.Component {
                         <span>Inactif</span>
                     </div>
                 </div>
+                {this.state.error}
                 <div className={this.props.show ? 'HeroList__container' : 'HeroList__container HeroList__container__hidden'}>
                 {
                     this.state.filtered.map((hero, index) => {
