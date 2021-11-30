@@ -12,12 +12,15 @@ __API Specs__
 
 GET /heroes
 
-- Get all heroes data
+    Get all heroes data
+
+GET /hero/:id
+
+    Get hero detail by ID
 
 POST /heroes
 
-- Create a new heroes into the MongoDB database
-
+    Create a new hero
 
 **Frontend**
 
