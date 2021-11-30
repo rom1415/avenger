@@ -5,7 +5,7 @@
 }
 
 .HeroList__container__hidden {
-    display: none;
+    display: none !important;
 }
 
 .HeroList__hero__item a {
@@ -85,6 +85,10 @@
 
 @media (min-width:0px) and (max-width: 1250px)
 {
+    .HeroList__container__hidden {
+        display: none;
+    }
+
     .HeroList__search__container {
         display: flex;
         flex-direction: column;
@@ -106,6 +110,7 @@
         grid-template-columns: auto auto;
         grid-template-rows: auto auto;
         justify-content: center;
+        margin-bottom:50px;
     }
 }
 

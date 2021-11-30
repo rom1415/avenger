@@ -44,7 +44,6 @@ class HeroDetail extends React.Component {
                     <div className="HeroDetail__item">
                         <div className="HeroDetail__item__header">
                             <h1>{this.state.name}</h1>
-                            {this.state.heroId}
                             <a href="/" className="HeroDetails__close" onClick={this.props.onclick}>X</a>
                         </div>
 
