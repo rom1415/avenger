@@ -17,6 +17,10 @@ class HeroList extends React.Component {
             statusFilter:''
         }
 
+    }
+
+    componentDidMount()
+    {
         let self = this;
 
         axios
@@ -70,7 +74,7 @@ class HeroList extends React.Component {
                     </div>
                     <div className="HeroList__search__container__switch">
                         <span>Actif</span>
-                        <Switch onChange={this.handleStatus} checked={this.state.checked} />
+                            <Switch onChange={this.handleStatus} checked={this.state.checked} />
                         <span>Inactif</span>
                     </div>
                 </div>
@@ -78,9 +82,8 @@ class HeroList extends React.Component {
                 {
                     this.state.filtered.map((hero, index) => {
                         return (
-                            <a className="HeroList__hero__item">
+                            <a key={index} href="#/" className="HeroList__hero__item">
                                 <Hero 
-                                    key={index} 
                                     id={hero._id}
                                     name={hero.name}
                                     age={hero.age}

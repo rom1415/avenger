@@ -23,6 +23,7 @@
     width: 370px;
     filter: drop-shadow(2px 4px 6px black);
     transition: border 750ms ease-in-out;
+    text-decoration: none;
 }
 
 .HeroList__hero__item:hover {

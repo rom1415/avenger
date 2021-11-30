@@ -3,7 +3,7 @@ import './App.css';
 import Splashscreen from './components/Splashscreen/Splashscreen.js';
 import HeroesList from './components/HeroesList/HeroesList.js';
 import HeroDetail from './components/HeroDetail/HeroDetail.js';
-import { useState, setState } from 'react';
+import { useState } from 'react';
 
 function App() {
 
