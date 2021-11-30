@@ -25,10 +25,11 @@ class HeroDetail extends React.Component {
             axios
                 .get('http://localhost:3001/hero/' + this.props.heroId)
                 .then(function(res){
-                    console.log(res.data);
                     self.setState({
                         name: res.data.name,
                         age: res.data.age,
+                        description: res.data.description,
+                        realname: res.data.realname,
                         status: res.data.status,
                         isLoaded: true
                     });

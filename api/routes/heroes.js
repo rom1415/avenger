@@ -20,10 +20,10 @@ router.post('/heroes', function(req, res, next){
   heroesModel.create({
     name: 'new hero',
     age: 30,
+    realname: 'Real name hero',
+    description:"With a description",
     status: 'actif'
-  });
-
-  res.send('POST /hero');
+  }).exec();
 })
 
 
