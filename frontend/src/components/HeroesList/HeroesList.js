@@ -60,7 +60,7 @@ class HeroList extends React.Component {
             filtered: filtered
         })
     }
-    
+
     render() {
         return(
             <div>
@@ -74,7 +74,7 @@ class HeroList extends React.Component {
                         <span>Inactif</span>
                     </div>
                 </div>
-                <div className="HeroList__container">
+                <div className={this.props.show ? 'HeroList__container' : 'HeroList__container HeroList__container__hidden'}>
                 {
                     this.state.filtered.map((hero, index) => {
                         return (
@@ -85,6 +85,7 @@ class HeroList extends React.Component {
                                     name={hero.name}
                                     age={hero.age}
                                     status={hero.status}
+                                    onclick={this.props.onclick}
                                 ></Hero>
                             </a>
                         )
