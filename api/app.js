@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 
+require('dotenv').config();
+
 const mongoose = require('mongoose');
 
 var heroesRouter = require('./routes/heroes');
@@ -12,7 +14,7 @@ var heroesRouter = require('./routes/heroes');
 var app = express();
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb+srv://rhumandcode:1234@cluster0.4uaqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGO_DB_URL;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //Get the default connection

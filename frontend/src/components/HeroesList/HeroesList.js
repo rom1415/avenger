@@ -25,7 +25,7 @@ class HeroList extends React.Component {
         let self = this;
 
         axios
-            .get('http://localhost:3001/heroes')
+            .get(process.env.REACT_APP_API_ENDPOINT + 'heroes')
             .then(function(res){
                 self.setState({
                     heroes: res.data,
